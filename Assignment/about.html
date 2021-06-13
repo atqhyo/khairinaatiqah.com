@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<title>My Experience in Mamasab Bakery</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section class="sub-header">
+		<nav>
+			<a href="index.html"><img src="logo.png" alt="logo">
+			</a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onClick="hideMenu()"></i>
+				 <ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="products.html">PRODUCTS</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onClick="showMenu()"></i>
+		</nav>
+		<h1>About</h1>	
+	</section>
+	
+<!----- About ----->
+
+<section class="about-me">		
+	<div class="row">
+		<div class="aboutme-col">
+			<h1>Experience in Mamasab Bakery</h1>
+			<p>I'm a full-time student searching for new income. When I heard that my sister was searching for a mamasab dropship, I became interested with learning how to run my own business because I had never worked or started a business previously and had little interest in it because I didn't know how to run it properly. I only work part-time for the mamasab business, so I didn't imagine the results to be great. I recently joined Mamasab a couple of months ago and was able to sell for RM2000++.</p>
+			<a href="products.html" class="hero-btn pink-btn">EXPLORE NOW</a>
+		</div>
+		<div class="aboutme-col">
+			<img src="about.jpeg" alt="about">
+		</div>
+	</div>
+</section>
+
+<!----- Details ----->
+
+<section class="detail">
+
+	<div class="detail-row">
+		<h1>Why I choose Mamasab?</h1>
+		<div class="detail-col">
+			<i class="fa fa-handshake-o fa-4x"></i>
+			<p>No Need To Hold Stock</p>
+		</div>
+		<div class="detail-col">
+			<i class="fa fa-ban fa-4x"></i>
+			<p>Zero Modal</p>
+		</div>
+		<div class="detail-col">
+			<i class="fa fa-users fa-4x"></i>
+			<p>Free Coaching</p>
+		</div>
+		<div class="detail-col">
+			<i class="fa fa-home fa-4x"></i>
+			<p>Work From Home</p>
+		</div>
+	</div>
+	
+</section>
+
+<!----- Achievements ----->
+
+<section class="achieve">
+	<div class="achieve-row">
+		<h1>My Achievements</h1>
+		<div class="detail-col">
+			<img src="achieve.jpeg" alt="achieve">
+		</div>
+	</div>
+</section>
+
+<!----- Join Us ----->
+	
+<section class="join">
+	
+	<h1>Let's Get in Touch!</h1>
+	<p>Hii! Thank you for being here! I don't know how to express my expression! So, if you have any questions about my experience as a dropship in Mamasab, please fill out this form or contact me through the contact page. You may also find me on Socmed, which is listed below the page. Have a wonderful day!</p>
+		
+<div class="comment-box">
+	<h2>Fill out the Form</h2><br>
+		<form class="aboutform" id="myform" onSubmit="return validation()">
+			Enter Your Name:
+			<input type="text" placeholder="Enter Name" id="name"><br>
+			<br>Gender:
+			&ensp;<input type="radio" name="gender" value="Male">
+			Male &emsp;
+			&ensp;<input type="radio" name="gender" value="Female">
+			Female<br><br>
+			Age:
+			<select name="age">
+				<option value="select">----select option----</option>
+				<option value="below">below 18 years old
+				</option>
+				<option value="range">19 - 25 years old
+				</option>
+				<option value="range1">26 - 35 years old
+				</option>
+			</select>
+			<br><br>Want to join me?:
+			&ensp; Yes &ensp;<input type="checkbox" name="yes">&ensp;
+			&ensp; No &ensp;<input type="checkbox" name="no">
+			<textarea rows="5" id="message" placeholder="Ask Question"></textarea>
+			<button type="submit" class="hero-btn pink-btn">Submit</button>
+		</form>
+</div>
+</section>
+	
+<!----- Footer ----->
+<section class="footer">
+	<div class="icons">
+		<a href="https://wa.link/bsgobd">
+		<i class="fa fa-phone"></i></a>
+		<a href="https://msng.link/o/?01151913551=tg">
+		<i class="fa fa-telegram"></i></a>
+		<a href="https://web.facebook.com/khairina.atiqah">
+		<i class="fa fa-facebook"></i></a>
+		<a href="https://www.instagram.com/mamasabbakery.erin/">
+		<i class="fa fa-instagram"></i>
+		</a>
+	</div>
+	<p>Made with<i class="fa fa-heart-o"></i>by Khairina Atiqah</p>
+	
+</section>
+	
+<!----- JavaScript for Toggle Menu ----->
+<script>
+
+	var navLinks = document.getElementById("navLinks");
+	
+	
+	function showMenu(){
+		navLinks.style.right = "0";
+	}
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+	
+</script>
+	
+<!----- Form Validation ----->
+	
+<script>
+	
+	function validation(){	
+	var name = document.getElementById("name").value;
+	var message = document.getElementById("message").value;
+	var error_message = document.getElementById("error_message");
+	var text;
+		
+	error_message.style.padding = "10px";
+
+	if(name.length <5){
+		text = "Please Enter Valid Name";
+		error_message.innerHTML = text;
+		return false;
+	}
+
+	if(message.length <= 140){
+		text = "Please Enter More Than 140 Characters";
+		error_message.innerHTML = text;
+		return false;
+	}
+	alert("Comment Submitted Successfully!")
+	return true;
+}
+</script>
+</body>
+</html>

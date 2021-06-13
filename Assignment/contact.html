@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<title>My Experience in Mamasab Bakery</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section class="sub-header">
+		<nav>
+			<a href="index.html"><img src="logo.png" alt="logo">
+			</a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onClick="hideMenu()"></i>
+				 <ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="products.html">PRODUCTS</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onClick="showMenu()"></i>
+		</nav>
+		<h1>Contact Me</h1>	
+</section>
+	
+<!----- Contact Me ----->
+
+<section class="location">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0687994267337!2d101.62229591475717!3d3.076302697759798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ba077215ccf%3A0xa4c25ba7e648d0d5!2sMamasab%20Petaling%20Jaya!5e0!3m2!1sen!2smy!4v1623507427443!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+</section>
+
+<section class="contact">
+	
+	<div class="row">
+		<div class="contact-col">
+			<div>
+				<i class="fa fa-phone"></i>
+				<span>
+					<h5>+60 1151913551</h5>
+					<p>Everyday, 8AM to 6PM</p>
+				</span>
+			</div>
+			<div>
+				<i class="fa fa-envelope-o"></i>
+				<span>		
+					<h5>erinatiqah@gmail.com</h5>
+					<p>Email us your query</p>
+				</span>
+			</div>
+		</div>
+<div class="contact-col">
+	<div id="error_message"></div>
+		<form id="myform" onSubmit="return validation()">
+			<input type="text" placeholder="Enter your name" id="name">
+			<input type="text" placeholder="Enter email address" id="email">
+			<input type="text"  placeholder="Enter your subject" id="subject">
+			<textarea rows="8" id="message" placeholder="Message"></textarea>
+			<button type="submit" class="hero-btn pink-btn">Send Message</button>
+		</form>
+</div>
+</div>
+		
+</section>
+
+<!----- Footer ----->
+<section class="footer">
+	<div class="icons">
+		<a href="https://wa.link/bsgobd">
+		<i class="fa fa-phone"></i></a>
+		<a href="https://msng.link/o/?01151913551=tg">
+		<i class="fa fa-telegram"></i></a>
+		<a href="https://web.facebook.com/khairina.atiqah">
+		<i class="fa fa-facebook"></i></a>
+		<a href="https://www.instagram.com/mamasabbakery.erin/">
+		<i class="fa fa-instagram"></i>
+		</a>
+	</div>
+	<p>Made with<i class="fa fa-heart-o"></i>by Khairina Atiqah</p>
+	
+</section>
+	
+<!----- JavaScript for Toggle Menu ----->
+<script>
+
+	var navLinks = document.getElementById("navLinks");
+	
+	
+	function showMenu(){
+		navLinks.style.right = "0";
+	}
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+	
+</script>
+
+<!----- Form Validation ----->
+<script>
+	
+	function validation(){	
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var subject = document.getElementById("subject").value;
+	var message = document.getElementById("message").value;
+	var error_message = document.getElementById("error_message");
+	var text;
+		
+	error_message.style.padding = "10px";
+
+	if(name.length <5){
+		text = "Please Enter Valid Name";
+		error_message.innerHTML = text;
+		return false;
+	}
+
+	if(email.indexOf("@") == -1 || email.length < 6){
+		text = "Please Enter Valid Email";
+		error_message.innerHTML = text;
+		return false;
+	}
+
+	if(subject.length <6){
+		text = "Please Enter Correct Subject";
+		error_message.innerHTML = text;
+		return false;
+	}
+
+	if(message.length <= 140){
+		text = "Please Enter More Than 140 Characters";
+		error_message.innerHTML = text;
+		return false;
+	}
+	alert("Submitted Successfully!")
+	return true;
+}
+
+</script>	
+</body>
+</html>

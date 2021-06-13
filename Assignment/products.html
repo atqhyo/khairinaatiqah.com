@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<title>My Experience in Mamasab Bakery</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section class="sub-header">
+		<nav>
+			<a href="index.html"><img src="logo.png" alt="logo">
+			</a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onClick="hideMenu()"></i>
+				 <ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="products.html">PRODUCTS</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onClick="showMenu()"></i>
+		</nav>
+		<h1>Products</h1>	
+</section>
+	
+<!----- Products ----->
+
+<section class="product">
+	<h1>Products Mamasab</h1>
+	
+	<div class="row">
+		<div class="product-col">
+			<img src="cake.png" alt="cake">
+			<div class="layer">
+				<h3>CAKE</h3>
+			</div>
+		</div>
+		<div class="product-col">
+			<img src="food.png" alt="food">
+			<div class="layer">
+				<h3>FROZEN FOOD</h3>
+			</div>
+		</div>
+		<div class="product-col">
+			<img src="dessert.png" alt="dessert">
+			<div class="layer">
+				<h3>DESSERT</h3>
+			</div>
+		</div>	
+	</div>	
+	
+<!----- video ----->
+	
+<section class="vid">
+	<br><h1>What exactly is Mamasab?</h1><br>
+	<video width="1020" height="540" controls>
+		<source src="Jom Kenali Mamasab Bakery.mp4" type="video/mp4">
+	</video>
+</section>
+	
+<!----- comment ----->
+	
+<div class="comment-box">
+
+	<h3>Leave a comment</h3>
+		<div id="error_message"></div>
+		<form class="comment-form" id="myform" onSubmit="return validation()">
+			<input type="text" placeholder="Enter Name" id="name">
+			<input type="text" placeholder="Enter Email" id="email">
+			<textarea rows="5" id="message" placeholder="Your Comment"></textarea>
+			<button type="submit" class="hero-btn pink-btn">POST COMMENT</button>
+		</form>
+	</div>
+</section>
+	
+<!----- Footer ----->
+<section class="footer">
+	<div class="icons">
+		<a href="https://wa.link/bsgobd">
+		<i class="fa fa-phone"></i></a>
+		<a href="https://msng.link/o/?01151913551=tg">
+		<i class="fa fa-telegram"></i></a>
+		<a href="https://web.facebook.com/khairina.atiqah">
+		<i class="fa fa-facebook"></i></a>
+		<a href="https://www.instagram.com/mamasabbakery.erin/">
+		<i class="fa fa-instagram"></i>
+		</a>
+	</div>
+	<p>Made with<i class="fa fa-heart-o"></i>by Khairina Atiqah</p>
+	
+</section>
+	
+<!----- JavaScript for Toggle Menu ----->
+<script>
+
+	var navLinks = document.getElementById("navLinks");
+	
+	
+	function showMenu(){
+		navLinks.style.right = "0";
+	}
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+	
+</script>
+	
+<!----- Form Validation ----->
+	
+<script>
+	
+	function validation(){	
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var message = document.getElementById("message").value;
+	var error_message = document.getElementById("error_message");
+	var text;
+		
+	error_message.style.padding = "10px";
+
+	if(name.length <5){
+		text = "Please Enter Valid Name";
+		error_message.innerHTML = text;
+		return false;
+	}
+
+	if(email.indexOf("@") == -1 || email.length < 6){
+		text = "Please Enter Valid Email";
+		error_message.innerHTML = text;
+		return false;
+	}
+
+	if(message.length <= 140){
+		text = "Please Enter More Than 140 Characters";
+		error_message.innerHTML = text;
+		return false;
+	}
+	alert("Comment Submitted Successfully!")
+	return true;
+}
+
+</script>
+</body>
+</html>
